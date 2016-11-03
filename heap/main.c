@@ -1,28 +1,39 @@
 #include "heap.h"
 
-int random_num(int start, int end)
-{
-    static int first_time = TRUE;
-
-    if(first_time){
-        first_time = FALSE;
-        srand((unsigned int)time(NULL));
-    }
-
-    return rand() % (end-start+1) + start;
-}
-
 int main()
 {
+    int a[] = {2, 3, 1, 41, 23, 5, 4, 0};
     heap h;
-    initheap(&h, 100);
-    int i;
-    for(i=1; i<100; i++){
-        h.base[i] = random_num(1, 10);
-    }
-    for(i=1; i<100; i++){
-        printf("%d", h.base[i]);
-    }
+
+    init_heap(&h, sizeof(a)/sizeof(int), a);
+    show_heap(&h);
+
     build_min_heap(&h);
+    show_heap(&h);
+
+    min_heap_sort(&h);
+    show_heap(&h);
+
+    build_max_heap(&h);
+    show_heap(&h);
+
+    max_heap_sort(&h);
+    show_heap(&h);
+
+    build_max_heap(&h);
+    show_heap(&h);
+
+    heap_extract_max(&h);
+    show_heap(&h);
+
+    max_heap_insert(&h, 90);
+    show_heap(&h);
+
+    max_heap_insert(&h, 100);
+    show_heap(&h);
+
+    max_heap_insert(&h, 9);
+    show_heap(&h);
+
     return 0;
 }
