@@ -3,7 +3,7 @@
 int main()
 {
     int a[] = {2, 3, 1, 41, 23, 5, 4, 0};
-    heap h;
+    Heap h;
 
     init_heap(&h, sizeof(a)/sizeof(int), a);
     show_heap(&h);

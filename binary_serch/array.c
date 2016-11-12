@@ -1,19 +1,23 @@
 #include "binary_search.h"
 
-void init_array(array *a){
+void init_array(Array *a)
+{
     a->base = (int*)malloc(sizeof(int)*10);
+    a->len = ARINIT;
     a->top = 0;
-    a->len = 10;
 }
 
-void expend_array(array *a){
-    a->base = (int*)realloc(a->base, sizeof(int)*(a->len+10));
-    a->len += 10;
-}
-
-void array_append(array *a, int n){
-    if(a->top == a->len-1){
-        expend_array(a);
+int array_append(Array *a, int n)
+{
+    if(a->top >= a->len-1){ // grow
+        int *ab = (int*)realloc(a->base, 
+                        (ARGROW*a->len) * sizeof(int));
+        if(ab == NULL){
+            return -1;
+        }
+        a->len *= ARGROW;
+        a->base = ab;
     }
-    a->base[a->top++] = n;
+    a->base[a->top] = n;
+    return (a->top)++;
 }

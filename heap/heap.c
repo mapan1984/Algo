@@ -7,7 +7,7 @@ void swap(int *m, int *n)
     *n = tmp;
 }
 
-void init_heap(heap *h, int len, int *array)
+void init_heap(Heap *h, int len, int *array)
 {
     h->length = len;
     h->heap_size = 0;
@@ -22,7 +22,7 @@ void init_heap(heap *h, int len, int *array)
     }
 }
 
-void show_heap(heap *h)
+void show_heap(Heap *h)
 {
     int heap_size = h->heap_size;
     int len = h->length;
@@ -45,7 +45,7 @@ void show_heap(heap *h)
  * shift down h->base[i] to let h->base[i] is minor top heap
  * O(lgn)
  */
-void min_heapify(heap *h, int i)
+void min_heapify(Heap *h, int i)
 {
     int heap_size = h->heap_size;
     int *base = h->base;
@@ -73,7 +73,7 @@ void min_heapify(heap *h, int i)
     }
 }
 
-void build_min_heap(heap *h)
+void build_min_heap(Heap *h)
 {
     h->heap_size = h->length;
     int i;
@@ -88,7 +88,7 @@ void build_min_heap(heap *h)
  * shift down h->base[i] let h->base[i] is heap
  * O(lgn)
  */
-void max_heapify(heap *h, int i)
+void max_heapify(Heap *h, int i)
 {
     int l = LEFT(i);
     int r = RIGHT(i);
@@ -112,7 +112,7 @@ void max_heapify(heap *h, int i)
 /*
  * O(n)
  */
-void build_max_heap(heap *h)
+void build_max_heap(Heap *h)
 {
     h->heap_size = h->length;
     int i;

@@ -12,11 +12,12 @@ typedef struct{
     int *base;
     int top;
     int len;
-}array;
+} Array;
 
-void init_array(array *a);
-void expend_array(array *a);
-void array_append(array *a, int n);
-int getnum(char const *name, array *a);
+enum { ARINIT = 10, ARGROW = 2 };
+
+void init_array(Array *a);
+int array_append(Array *a, int n);
+int getnum(char const *name, Array *a);
 
 #endif

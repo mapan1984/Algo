@@ -1,6 +1,6 @@
 #include "binary_search.h"
 
-int getnum(char const *name, array *a)
+int getnum(char const *name, Array *a)
 {
     FILE *fd = fopen(name, "r");
     if(fd == NULL){

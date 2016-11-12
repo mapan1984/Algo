@@ -34,13 +34,13 @@ def binary_search(num_list, target):
             u = m - 1
     else:
         return -1
-    
+
 @logger
 def sequential_search(num_list, target):
     for index, item in enumerate(num_list):
         if item == target:
-            return index 
-            
+            return index
+
 if __name__ == "__main__":
     filename = input("filename：")
     num_list = list(get_num(filename))

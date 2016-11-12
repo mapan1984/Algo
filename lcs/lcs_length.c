@@ -7,15 +7,15 @@ typedef struct {
     int row;
     int col;
     int *base;
-} int_table;
+} IntTable;
  
 typedef struct {
     int row;
     int col;
     char *base;
-} char_table;
+} CharTable;
 
-void init_int_table(int_table *t, int row, int col)
+void init_int_table(IntTable *t, int row, int col)
 {
     t->row = row;
     t->col = col;
@@ -25,7 +25,7 @@ void init_int_table(int_table *t, int row, int col)
     }
 }
 
-void init_char_table(char_table *t, int row, int col)
+void init_char_table(CharTable *t, int row, int col)
 {
     t->row = row;
     t->col = col;
@@ -37,7 +37,7 @@ void init_char_table(char_table *t, int row, int col)
 
 #define ELEMENT(table, r, c) (*(table->base + (r)*table->col + (c)))
 
-int lcs_length(char *x, char *y, int_table *c, char_table *b)
+int lcs_length(char *x, char *y, IntTable *c, CharTable *b)
 {
     int i, j;
     int m = strlen(x);
@@ -99,7 +99,7 @@ int lcs_length(char *x, char *y, int_table *c, char_table *b)
     return ELEMENT(c, m, n);
 }
 
-void print_lcs(char_table *b, char *x, int len_x, int len_y)
+void print_lcs(CharTable *b, char *x, int len_x, int len_y)
 {
     if(len_x == 0 || len_y == 0){
         return;
@@ -121,8 +121,8 @@ int main()
     char *y = "dcba";
     int len_x = strlen(x);
     int len_y = strlen(y);
-    int_table c;
-    char_table b;
+    IntTable c;
+    CharTable b;
 
     int rs = lcs_length(x, y, &c, &b);
     printf("lcs_length = %d\n", rs);

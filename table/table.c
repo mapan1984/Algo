@@ -5,11 +5,11 @@ typedef struct {
     int row;
     int col;
     int *base;
-} table;
+} Table;
 
-#define ELEMENT(table, r, c) (*(table.base + (r)*table.col + (c)))
+#define ELEMENT(Table, r, c) (*(Table.base + (r)*Table.col + (c)))
  
-void init_table(table *t, int row, int col)
+void init_table(Table *t, int row, int col)
 {
     t->row = row;
     t->col = col;
@@ -23,7 +23,7 @@ int main()
 {
     int i, j;
     int row=3, col=4;
-    table t;
+    Table t;
     init_table(&t, row, col);
     for(i=0; i<row; i++){
         for(j=0; j<col; j++){

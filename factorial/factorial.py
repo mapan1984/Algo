@@ -36,9 +36,9 @@ def show(fn, argv):
     for i in range(1000):
         result = fn(argv)
     te = time.time()
-    print("%s: \nresult = %s\ntime = %.6f ms\n\n" % 
+    print("%s: \nresult = %s\ntime = %.6f ms\n\n" %
             (fn.__name__, result, (te-ts)))
-    
+
 if __name__ == "__main__":
     n = input("n = ")
     show(factorial1, n)

@@ -4,7 +4,7 @@
  * O(nlgn)
  */
 
-void min_heap_sort(heap *h)
+void min_heap_sort(Heap *h)
 {
     build_min_heap(h);
     int len = h->length;
@@ -17,7 +17,7 @@ void min_heap_sort(heap *h)
     }
 }
 
-void max_heap_sort(heap *h)
+void max_heap_sort(Heap *h)
 {
     build_max_heap(h);
     int len = h->length;

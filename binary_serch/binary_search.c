@@ -27,7 +27,7 @@ int get_target()
 
 int main()
 {
-    array a;
+    Array a;
     init_array(&a);
     getnum("bs-1.txt", &a);
     int target = get_target();
