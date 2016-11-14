@@ -1,4 +1,5 @@
 var selectsort = function (array){
+
     var newArray = array,
         length = array.length,
         indexMin;

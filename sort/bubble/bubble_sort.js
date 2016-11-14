@@ -1,8 +1,10 @@
 var bubbleSort = function(array){
+
     var length = array.length,
         newArray = array,
         noSwap,
         tmp;
+
     for(var i=0; i<length; i++){
         noSwap = true; // 检测是否发生交换的哨兵
         for(var j=0; j<length-1-i; j++){
@@ -17,5 +19,6 @@ var bubbleSort = function(array){
             break;
         }
     }
+
     return newArray;
 };
