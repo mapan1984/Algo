@@ -8,5 +8,7 @@ priqueue.o: priqueue.c heap.h
 	gcc -c priqueue.c
 heap_sort.o: heap_sort.c heap.h
 	gcc -c heap_sort.c
+
+.PHONY: clean
 clean:
 	rm *.o *.exe

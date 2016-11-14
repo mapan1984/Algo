@@ -1,5 +1,5 @@
-#ifndef __HEAP_H_
-#define __HEAP_H_
+#ifndef HEAP_H_
+#define HEAP_H_
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,9 +15,9 @@ typedef struct {
     int *base;
 } Heap;
 
-#define PARENT(i) ((i)/2)
-#define LEFT(i) (2*(i))
-#define RIGHT(i) (2*(i) + 1)
+#define PARENT(i) ((i)>>1)
+#define LEFT(i) ((i)<<1)
+#define RIGHT(i) (((i)<<1) + 1)
 
 void swap(int *m, int *n);
 void init_heap(Heap *h, int len, int *array);
