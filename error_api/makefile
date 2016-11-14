@@ -1,9 +1,13 @@
-main: main.o error_api.o
-	gcc -o main main.o error_api.o
-main.o: main.c error_api.h
-	gcc -c main.c
+all: error_api.o
+
 error_api.o: error_api.c error_api.h
 	gcc -c error_api.c
+
+.PHONY: test clean
+test: 
+	gcc -c test.c
+	gcc -o test test.o error_api.o
+	./test
 
 clean:
 	rm -f *.o *~

@@ -49,18 +49,18 @@ void *emalloc(size_t n)
     return p;
 }
 
-static char *name = NULL;
+static char *g_fn_name = NULL;
 
 /* setprogname: set stored name of program */
 void setprogname(const char *str)
 {
-    name = estrdup(str);
+    g_fn_name = estrdup(str);
 }
 
 /* progname: return stored name of program */
 char *progname(void)
 {
-    return name;
+    return g_fn_name;
 }
 
 #endif

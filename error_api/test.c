@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    setprogname("main");
-    eprintf("can't open %s:", "mapan");
+    setprogname("test");
+    eprintf("can't open %s:", "file");
     return 0;
 }
