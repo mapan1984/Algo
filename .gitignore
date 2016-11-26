@@ -1,6 +1,8 @@
 .vscode
 tags
+.clang-format
 *.o
 *.exe
 *.exe.stackdump
-*.pyc
+*.py[cod]
+__pycache__
