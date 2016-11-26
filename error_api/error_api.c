@@ -1,6 +1,3 @@
-#ifndef _error_api_h_
-#define _error_api_h_
-
 #include "error_api.h"
 
 /* eprintf: print error message and exit */
@@ -62,5 +59,3 @@ char *progname(void)
 {
     return g_fn_name;
 }
-
-#endif

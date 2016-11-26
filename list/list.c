@@ -4,17 +4,35 @@ typedef struct Nameval {
     Nameval *next;  /* in list */
 } Nameval;
 
-void eprintf(char *fmt, char *arg)
+/* eprintf: print error message and exit */
+void eprintf(char *fmt, ...)
 {
-    printf(fmt, arg);
-    exit(0);
+    va_list args;
+
+    fflush(stdout);
+    if(progname() != NULL){
+        fprintf(stderr, "%s: ", progname());
+    }
+
+    va_start(args, fmt);
+    vfprintf(stderr, fmt, args);
+    va_end(args);
+
+    if(fmt[0] != '\0' && fmt[strlen(fmt)-1] == ':'){
+        fprintf(stderr, " %s", strerror(errno));
+    }
+    fprintf(stderr, "\n");
+    exit(2);  // conventional value for failed execution
 }
 
-void *emalloc(unsigned int size)
+/* emalloc: malloc and report if error */
+void *emalloc(size_t n)
 {
-    void *p = malloc(size);
+    void *p;
+
+    p = malloc(n);
     if(p == NULL){
-        eprintf("%s fail!", malloc);
+        eprintf("malloc of %u bytes failed:", n);
     }
     return p;
 }
