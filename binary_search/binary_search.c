@@ -1,17 +1,18 @@
 #include "binary_search.h"
 
-int binary_search(int *a, int target, int len)
+// binary search for target in array, return index
+int binary_search(int *array, int target, int len)
 {
-    int l = 0;
-    int u = len -1;
-    while(l <= u){
-        int m = (l+u)/2;
-        if(target < a[m]){
-            u = m - 1;
-        }else if(target > a[m]){
-            l = m + 1;
+    int low = 0;
+    int high = len -1;
+    while(low <= high){
+        int mid = (low+high)/2;
+        if(target < array[mid]){
+            high = mid - 1;
+        }else if(target > array[mid]){
+            low = mid + 1;
         }else{
-            return m;
+            return mid;
         }
     }
     return -1;

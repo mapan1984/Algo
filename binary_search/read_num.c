@@ -1,8 +1,9 @@
 #include "binary_search.h"
 
-int getnum(char const *name, Array *a)
+// 从filename指定的文件(文件内容见bs-1与bs-2)中读取数据存入数组a
+int getnum(char const *filename, Array *a)
 {
-    FILE *fd = fopen(name, "r");
+    FILE *fd = fopen(filename, "r");
     if(fd == NULL){
         perror("can not open file");
         exit(EXIT_FAILURE);
