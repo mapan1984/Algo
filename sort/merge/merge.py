@@ -9,8 +9,8 @@ recursively merge adjancent partitions
     for i = leftPartStartIndex to rightPartLastIndex
         if leftPartHeadValue <= rightPartHeadValue:
             copy leftPartHeadValue
-        else: 
-            copy rightPartHeadValue; 
+        else:
+            copy rightPartHeadValue;
         Increase InvIdx
 copy elements back to original array
 """

@@ -18,6 +18,7 @@
 0. [二分查找](https://github.com/mapan1984/Toys/tree/master/binary_search)
 1. [排序](https://github.com/mapan1984/Toys/tree/master/sort)
     0. [插入排序](https://github.com/mapan1984/Toys/tree/master/sort/insert)
+    1. [归并排序](https://github.com/mapan1984/Toys/tree/master/sort/merge)
 2. [阶乘](https://github.com/mapan1984/Toys/tree/master/factorial)
 3. [最长公共子序列](https://github.com/mapan1984/Toys/tree/master/lcs)
 4. [活动安排问题](https://github.com/mapan1984/Toys/tree/master/arrange_activity)
