@@ -18,7 +18,7 @@ void show(int *a, int len)
     printf("\n");
 }
 
-/* 
+/*
  * mark first element as sorted
  * for each unsorted element
  *     'extract' the element
