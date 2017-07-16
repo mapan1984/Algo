@@ -18,6 +18,7 @@
 * [排序](https://github.com/mapan1984/Toys/tree/master/sort)
     * [插入排序](https://github.com/mapan1984/Toys/tree/master/sort/insert)
     * [归并排序](https://github.com/mapan1984/Toys/tree/master/sort/merge)
+    * [堆排序](https://github.com/mapan1984/Toys/tree/master/sort/heapsort)
 * [阶乘](https://github.com/mapan1984/Toys/tree/master/factorial)
 * [最长公共子序列](https://github.com/mapan1984/Toys/tree/master/lcs)
 * [活动安排问题](https://github.com/mapan1984/Toys/tree/master/arrange_activity)
