@@ -28,9 +28,9 @@
 
 eval0和eval1本质上是相同的，都是采用后序遍历二叉树求解表达式。
 
-不同处在于: 
+不同处在于:
 
-* eval0判断树结点`Tree.op`，并在不同分支进行操作 
+* eval0判断树结点`Tree.op`，并在不同分支进行操作
 * eval1采用数据驱动的方式，将操作函数`void (*op)(Tree *)`以操作类型`Tree.op`为键存入表`void (*optab[])(Tree *)`中，求值时不进行判断，直接使用`(*optab[t->op])(t)`
 
 如果将`a = max(b, c/2)`看作一种程序语言的源代码的话，我们此时直接用C语言解释执行了这种程序。
@@ -62,7 +62,7 @@ eval2与eval0、eval1完全不同，eval2利用`generate`将表达式树生成�
 
 编译器： generate函数
 
-虚拟指令： 
+虚拟指令：
 
     pushsymop
     b

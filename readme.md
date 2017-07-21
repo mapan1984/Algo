@@ -11,6 +11,7 @@
 * [表](https://github.com/mapan1984/Toys/tree/master/table)
 * [树](https://github.com/mapan1984/Toys/tree/master/tree)
     * [二叉搜索树](https://github.com/mapan1984/Toys/tree/master/tree/binary_search)
+    * [表达式解析](https://github.com/mapan1984/Toys/tree/master/tree/eval)
 * [向量](https://github.com/mapan1984/Toys/tree/master/vector)
 
 ## 算法
