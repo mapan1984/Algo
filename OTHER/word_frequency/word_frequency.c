@@ -14,7 +14,7 @@ typedef struct node {
 // 乘数
 #define MULT 31
 
-nodeptr bin[NHASH]; 
+nodeptr bin[NHASH];
 
 // 将单词映射为一个小于NHASH的正整数
 unsigned int hash(char *p)
@@ -54,7 +54,7 @@ int main()
     for(i=0; i<NHASH; i++){
         bin[i] = NULL;
     }
-    char buf[20]; 
+    char buf[20];
     while(scanf("%s", buf) != EOF){
         incword(buf);
     }

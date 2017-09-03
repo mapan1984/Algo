@@ -22,17 +22,7 @@
     * [归并排序](https://github.com/mapan1984/Algo/tree/master/sort/merge)
     * [堆排序](https://github.com/mapan1984/Algo/tree/master/sort/heapsort)
     * [计数排序](https://github.com/mapan1984/Algo/tree/master/sort/count)
-* [阶乘](https://github.com/mapan1984/Algo/tree/master/factorial)
-* [汉诺塔](https://github.com/mapan1984/Algo/tree/master/hanoi)
-* [八皇后问题](https://github.com/mapan1984/Algo/tree/master/queens)
-* [兑换硬币](https://github.com/mapan1984/Algo/tree/master/count_change)
-* [活动安排问题](https://github.com/mapan1984/Algo/tree/master/arrange_activity)
-* [最长公共子序列](https://github.com/mapan1984/Algo/tree/master/lcs)
-* [最大子数组](https://github.com/mapan1984/Algo/tree/master/max_subarray)
 
 ## 其他
 
-* [C错误处理](https://github.com/mapan1984/Algo/tree/master/error_api)
-* [使用哈希表进行词频统计](https://github.com/mapan1984/Algo/tree/master/word_frequency)
-* [马尔科夫链生成字符串](https://github.com/mapan1984/Algo/tree/master/generate_string)
-* [π值估计](https://github.com/mapan1984/Algo/tree/master/monte_carlo)
+* [OTHER](https://github.com/mapan1984/Algo/tree/master/other)
