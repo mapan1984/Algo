@@ -109,7 +109,7 @@ predecessor(x)
 
 ```
 insert(T, z)
-    xp = NIL   // 保存x的父结点
+    xp = NIL   // 用于保存x的父结点
     x = T.root
     while x ≠ NIL
         xp = x
