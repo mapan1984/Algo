@@ -1,3 +1,5 @@
+default: run
+
 objects = test.o heap.o
 
 test: $(objects)
@@ -8,6 +10,9 @@ test.o: test.c heap.h
 heap.o: heap.c heap.h
 	gcc -c heap.c
 
+run: test
+	./test
+
 .PHONY: clean
 clean:
-	rm test $(objects)
+	rm -rf test $(objects)

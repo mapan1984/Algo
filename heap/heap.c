@@ -34,12 +34,12 @@ void show_heap(Heap *h)
     int length = h->length;
     int heap_size = h->heap_size;
     printf("[");
-    for(i=1; i<=heap_size; i++){
+    for (i=1; i<=heap_size; i++) {
         printf("%d ", h->base[i]);
     }
     printf("]\n");
     printf("(not in heap--> ");
-    for(i; i<=length; i++){
+    for (; i<=length; i++) {
         printf("%d ", h->base[i]);
     }
     printf(")\n\n");
