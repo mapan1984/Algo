@@ -1,5 +1,17 @@
 #include "array.h"
 
+int init_array(Array *a)
+{
+    a->base = (int*)malloc(sizeof(int)*10);
+    if (a->base == NULL) {
+        return -1;
+    }
+    a->len = ARINIT;
+    a->top = 0;
+    return 1;
+}
+
+
 /*
  * 操作：
  *      a[top] = n
@@ -9,14 +21,12 @@
 int array_append(Array *a, int n)
 {
     if (a->base == NULL) {  // first time
-        a->base = (int *)malloc(ARINIT * sizeof(int));
-        if (a->base == NULL) {
+        int ok = init_array(a);
+        if (ok == -1) {
             return -1;
         }
-        a->len = ARINIT;
-        a->top = 0;
-    } else if (a->top >= a->len) {  // grow 
-        int *tmpb = (int *)realloc(a->base, 
+    } else if (a->top >= a->len) {  // grow
+        int *tmpb = (int *)realloc(a->base,
                             (ARGROW * a->len) * sizeof(int));
         if(tmpb == NULL){
             return -1;

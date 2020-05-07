@@ -1,1 +1,0 @@
-因为判断Array通过判断Array.base是否为NULL来判断Array是否为第一次使用，所以Array必须用malloc从堆中申请

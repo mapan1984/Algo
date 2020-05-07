@@ -18,10 +18,11 @@ typedef struct{
 } Array;
 
 enum {
-    ARINIT = 1, // Array初始长度
+    ARINIT = 5, // Array初始长度
     ARGROW = 2  // Array每次扩充倍数
 };
 
+int init_array(Array *a);
 int array_append(Array *a, int n);
 int array_remove(Array *a, int n);
 

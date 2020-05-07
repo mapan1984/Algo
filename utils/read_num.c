@@ -1,4 +1,4 @@
-#include "binary_search.h"
+#include "read_num.h"
 
 // 从filename指定的文件(文件内容见bs-1与bs-2)中读取数据存入数组a
 int getnum(char const *filename, Array *a)
