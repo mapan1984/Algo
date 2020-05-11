@@ -15,6 +15,7 @@ recursively merge adjancent partitions
 copy elements back to original array
 """
 
+
 def merge(left, right, compare):
     result = []
     i, j = 0, 0
@@ -33,6 +34,7 @@ def merge(left, right, compare):
         j = j + 1
     return result
 
+
 def merge_sort(L, compare=operator.lt):
     if len(L) < 2:
         return L[:]
@@ -41,6 +43,7 @@ def merge_sort(L, compare=operator.lt):
         left = merge_sort(L[:middle], compare)
         right = merge_sort(L[middle:], compare)
         return merge(left, right, compare)
+
 
 l = list(range(10))
 random.shuffle(l)
