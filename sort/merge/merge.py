@@ -16,6 +16,18 @@ copy elements back to original array
 """
 
 
+def merge_r(left, right):
+    if not left:
+        return right
+    if not right:
+        return left
+    if left[0] < right[0]:
+        return [left[0]] + merge(left[1:], right)
+    else:
+        return [right[0]] + merge(left, right[1:])
+
+
+
 def merge(left, right, compare):
     result = []
     i, j = 0, 0

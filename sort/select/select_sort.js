@@ -1,24 +1,26 @@
-var selectsort = function (array){
+const selectsort = array => {
+    let newArray = array
+    let length = array.length
+    let indexMin
 
-    var newArray = array,
-        length = array.length,
-        indexMin;
-
-    for(var i=0; i<length-1; i++){
-        indexMin = i;
+    for (let i = 0; i < length - 1; i++) {
+        indexMin = i
 
         // find the index of min element in newarray[i, length)
-        for(var j=i; j<length; j++){
-            if(newArray[indexMin] > newArray[j]){
-                indexMin = j;
+        for (var j = i; j < length; j++) {
+            if (newArray[indexMin] > newArray[j]) {
+                indexMin = j
             }
         }
-        if(i !== indexMin){ //swap
-            var tmp = newArray[i];
-            newArray[i] = newArray[indexMin];
-            newArray[indexMin] =tmp;
+        if (i !== indexMin) {
+            //swap
+            var tmp = newArray[i]
+            newArray[i] = newArray[indexMin]
+            newArray[indexMin] = tmp
         }
     }
 
-    return newArray;
-};
+    return newArray
+}
+
+module.exports = selectsort

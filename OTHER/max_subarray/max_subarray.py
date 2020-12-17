@@ -10,13 +10,16 @@ import random
 inf = float('Inf')
 ninf = float('-Inf')
 
+
 def high_index(a):
     """ return high index of a """
     return len(a) - 1
 
+
 def mid_index(a):
     """ return mid index of a """
     return (0 + high_index(a)) // 2
+
 
 def find_max_crossing_subarray(a, low, mid, high):
     """ 找到包含中点的子数组最大和
@@ -44,6 +47,7 @@ def find_max_crossing_subarray(a, low, mid, high):
 
     return max_left, max_right, left_sum+right_sum
 
+
 def find_max_subarray(a, low, high):
     """找到数组的最大子数组"""
     if low == high:
@@ -53,7 +57,7 @@ def find_max_subarray(a, low, high):
         left_low, left_high, left_sum = find_max_subarray(a, low, mid)
         right_low, right_high, right_sum = find_max_subarray(a, mid+1, high)
         cross_low, cross_high, cross_sum = \
-                find_max_crossing_subarray(a, low, mid, high)
+            find_max_crossing_subarray(a, low, mid, high)
         if left_sum > right_sum and left_sum > cross_sum:
             return left_low, left_high, left_sum
         elif right_sum > left_sum and right_sum > cross_sum:
@@ -62,10 +66,9 @@ def find_max_subarray(a, low, high):
             return cross_low, cross_high, cross_sum
 
 
-#a = list(range(-100, 100))
-#random.shuffle(a)
+# a = list(range(-100, 100))
+# random.shuffle(a)
 
 a = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
 
 print(find_max_subarray(a, 0, high_index(a)))
-

@@ -12,7 +12,7 @@ void show(int *a, int len)
 {
     int i;
     printf("array = ");
-    for(i=0; i < len; i++){
+    for (i = 0; i < len; i++) {
         printf("%d ", a[i]);
     }
     printf("\n");
@@ -32,19 +32,18 @@ void show(int *a, int len)
 void sort1(int *a, int len)
 {
     int i, j;
-    for(i=1; i < len; i++){
-        for(j=i; j > 0 && a[j-1] > a[j]; j--){
+    for (i = 1; i < len; i++) {
+        for (j = i; j > 0 && a[j-1] > a[j]; j--) {
             swap(a+j-1, a+j);
         }
     }
-
 }
 
 void sort2(int *a, int len)
 {
     int i, j;
-    for(i=1; i < len; i++){
-        for(j=i; j > 0 && a[j-1] > a[j]; j--){
+    for (i = 1; i < len; i++) {
+        for (j = i; j > 0 && a[j-1] > a[j]; j--) {
             int t = a[j-1];
             a[j-1] = a[j];
             a[j] = t;
@@ -55,9 +54,9 @@ void sort2(int *a, int len)
 void sort3(int *a, int len)
 {
     int i, j;
-    for(i=1; i < len; i++){
+    for (i = 1; i < len; i++) {
         int t = a[i];
-        for(j=i; j > 0 && a[j-1] > t; j--){
+        for (j = i; j > 0 && a[j-1] > t; j--) {
             a[j] = a[j-1];
         }
         a[j] = t;
@@ -66,7 +65,7 @@ void sort3(int *a, int len)
 
 int main()
 {
-    int a[]={2,1,8,5,6,9,0};
+    int a[] = {2,1,8,5,6,9,0};
     int len = sizeof(a)/sizeof(int);
     printf("len=%d\n", len);
 
