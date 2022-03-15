@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+// 指向 node 的指针类型
 typedef struct node *nodeptr;
 typedef struct node {
     char *word;
@@ -14,6 +15,7 @@ typedef struct node {
 // 乘数
 #define MULT 31
 
+// 散列表
 nodeptr bin[NHASH];
 
 // 将单词映射为一个小于NHASH的正整数
@@ -42,7 +44,7 @@ void incword(char *s)
     }
     p = (nodeptr)malloc(sizeof(node));
     p->count = 1;
-    p->word = (char *)malloc(strlen(s)*sizeof(char)+1);
+    p->word = (char *)malloc(strlen(s) * sizeof(char) + 1);
     strcpy(p->word, s);
     p->next = bin[h];
     bin[h] = p;
@@ -51,18 +53,28 @@ void incword(char *s)
 int main()
 {
     int i;
-    for(i=0; i<NHASH; i++){
+
+    // 初始化散列表
+    for(i = 0; i < NHASH; i++){
         bin[i] = NULL;
     }
+
+    // 输入词，不超过 19 个字符，并进行统计
+    // 输入 EOF 结束输入(windows: Control+Z, linux: Control+D)
+    printf("Input words less than 19 characters, EOF end input.\n");
     char buf[20];
     while(scanf("%s", buf) != EOF){
         incword(buf);
     }
+
+    // 输出结果
+    printf("Word count result:\n");
     nodeptr p;
-    for(i=0; i<NHASH; i++){
-        for(p=bin[i]; p != NULL; p=p->next){
+    for(i = 0; i < NHASH; i++){
+        for(p = bin[i]; p != NULL; p = p->next){
             printf("%s : %d\n", p->word, p->count);
         }
     }
+
     return 0;
 }
