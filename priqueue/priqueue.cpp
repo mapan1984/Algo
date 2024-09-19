@@ -1,13 +1,16 @@
 template<class T>
+
 class priqueue {
     int n, maxsize;
     T *x;
+
     void swap(int i, int j)
     {
         T t = x[i];
         x[j] = x[i];
         x[i] = t;
     }
+
 public:
     priqueue(int n)
     {
@@ -15,6 +18,7 @@ public:
         x = new T[maxsize+1];
         n = 0;
     }
+
     void insert(int t)
     {
         int i, p;
@@ -23,6 +27,7 @@ public:
             swap(i, p);
         }
     }
+
     T extractmin()
     {
         int i, c;
@@ -39,4 +44,4 @@ public:
         }
         return t;
     }
-}
+};

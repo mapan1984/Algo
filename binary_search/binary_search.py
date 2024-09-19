@@ -16,30 +16,34 @@ def logger(fn):
         return result
     return wrapper
 
+
 def get_num(filename):
     fd = open(filename, "r")
     return map(int, fd.read().split(","))
 
+
 @logger
 def binary_search(num_list, target):
-    l = 0
-    u = len(num_list) - 1
-    while l <= u:
-        m = (l+u)//2
-        if target > num_list[m]:
-            l = m + 1
-        elif target == num_list[m]:
-            return m
+    low = 0
+    high = len(num_list) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if target < num_list[mid]:
+            high = mid - 1
+        elif target > num_list[mid]:
+            low = mid + 1
         else:
-            u = m - 1
+            return mid
     else:
         return -1
+
 
 @logger
 def sequential_search(num_list, target):
     for index, item in enumerate(num_list):
         if item == target:
             return index
+
 
 if __name__ == "__main__":
     filename = input("filename：")

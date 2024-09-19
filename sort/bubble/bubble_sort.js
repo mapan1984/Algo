@@ -1,16 +1,14 @@
 const bubbleSort = array => {
     const length = array.length
-    let newArray = array
-    let noSwap
-    let tmp
 
+    // 每次将最大的数字排至末尾
     for (let i = 0; i < length; i++) {
-        noSwap = true // 检测是否发生交换的哨兵
+        let noSwap = true // 检测是否发生交换的哨兵
         for (let j = 0; j < length - 1 - i; j++) {
-            if (newArray[j] > newArray[j + 1]) {
-                tmp = newArray[j]
-                newArray[j] = newArray[j + 1]
-                newArray[j + 1] = tmp
+            if (array[j] > array[j + 1]) {
+                const tmp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = tmp
                 noSwap = false
             }
         }
@@ -20,7 +18,26 @@ const bubbleSort = array => {
         }
     }
 
-    return newArray
+    return array
 }
 
 module.exports = bubbleSort
+
+if (require.main === module) {
+    const readline = require('readline');
+
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.question('请输入一串数字，用空格分隔：', (inputString) => {
+        const numbersArray = inputString.split(' ').map(Number);
+        console.log(numbersArray);
+
+        sortedArray = bubbleSort(numbersArray)
+        console.log(sortedArray);
+
+        rl.close();
+    });
+}

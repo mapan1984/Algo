@@ -2,20 +2,24 @@
 
 import random
 
-def insert_sort(l):
-    for j in range(1, len(l)):
+
+def insert_sort(array):
+    for j in range(1, len(array)):
         i = j
-        key = l[i]
-        # l[0:j-1] is sorted
-        while i > 0 and key < l[i-1]:
-            l[i] = l[i-1]
+        key = array[i]
+        # array[0:j-1] is sorted
+        # insert array[i] into array[0:i-1]
+        while i > 0 and key < array[i-1]:
+            array[i] = array[i-1]
             i = i - 1
 
-        l[i] = key
+        array[i] = key
+
 
 if __name__ == "__main__":
-    l = [i for i in range(101)]
-    random.shuffle(l)
-    print(l)
-    insert_sort(l)
-    print(l)
+    array = [i for i in range(101)]
+    random.shuffle(array)
+    print(array)
+
+    insert_sort(array)
+    print(array)

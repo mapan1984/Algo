@@ -1,3 +1,5 @@
+#include "quick_sort.h"
+
 void swap(int *x, int *y)
 {
     int t = *x;

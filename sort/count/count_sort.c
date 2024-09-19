@@ -16,7 +16,7 @@ void show(int *a, int len)
 //     a[0..len]为待排序数组
 //     r[0..len]用于保存结果
 //     0 ≤ all elements of a[0..len] ≤ k
-void counting_sort(int *a, int *r, int len, int k)
+void count_sort(int *a, int *r, int len, int k)
 {
     int i;
 
@@ -55,7 +55,7 @@ int main()
 
     int b[8];
 
-    counting_sort(a, b, len, k);
+    count_sort(a, b, len, k);
     show(b, len);
 
     return 0;

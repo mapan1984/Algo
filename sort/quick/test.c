@@ -12,10 +12,18 @@ int main()
     //     free(a);
     // }
 
-    int *a = rlist(0, 1000, 10);
-    show(a, 10);
-    quick_sort(a, 0, 9);
-    show(a, 10);
+    // 初始化随机数组
+    int num = 30;
+    int min = 0;
+    int max = 100;
+    int *a = rlist(min, max, num);
+    show(a, num);
+
+    // 快速排序
+    quick_sort(a, 0, num - 1);
+    show(a, num);
+
+    // 释放数组空间
     free(a);
 
     double space = difftime(time(NULL), start);

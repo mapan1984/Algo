@@ -99,13 +99,11 @@ void max_heapify(Heap *h, int i)
     int heap_size = h->heap_size;
 
     // 寻找i，LEFT(i), RIGHT(i)中有最大值的下标
-    int largest;
+    int largest = i;
     int l = LEFT(i);
     int r = RIGHT(i);
-    if (l <= heap_size && base[l] > base[i]) {
+    if (l <= heap_size && base[l] > base[largest]) {
         largest = l;
-    } else {
-        largest = i;
     }
     if (r <= heap_size && base[r] > base[largest]) {
         largest = r;

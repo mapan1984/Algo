@@ -27,10 +27,10 @@ def merge_r(left, right):
         return [right[0]] + merge(left, right[1:])
 
 
-
 def merge(left, right, compare):
     result = []
     i, j = 0, 0
+
     while i < len(left) and j < len(right):
         if compare(left[i], right[j]):
             result.append(left[i])
@@ -38,12 +38,15 @@ def merge(left, right, compare):
         else:
             result.append(right[j])
             j = j + 1
+
     while i < len(left):
         result.append(left[i])
         i = i + 1
+
     while j < len(right):
         result.append(right[j])
         j = j + 1
+
     return result
 
 
@@ -57,6 +60,10 @@ def merge_sort(L, compare=operator.lt):
         return merge(left, right, compare)
 
 
-l = list(range(10))
-random.shuffle(l)
-print(merge_sort(l))
+if __name__ == '__main__':
+    array = list(range(10))
+    random.shuffle(array)
+    print(array)
+
+    s_array = merge_sort(array)
+    print(s_array)

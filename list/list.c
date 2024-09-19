@@ -60,14 +60,14 @@ Nameval *addfront(Nameval *listp, Nameval *newp)
 Nameval *addend(Nameval *listp, Nameval *newp)
 {
     Nameval *p;
-    
+
     if(listp == NULL){
         return newp;
     }
 
     for(p = listp; p->next != NULL; p = p->next)
         ;
-    
+
     p->next = newp;
     return listp;
 }
